@@ -1,2 +1,4 @@
-# CubeMX Rename Project Tool
-该脚本可以实现对CubeMX生成的CMake工程进行改名而不影响其使用，让一个工程作为其它工程的模板
+# CubeMX-Rename-Project-Tool_Auto-Check
+该脚本可以实现对CubeMX生成的CMake工程进行改名而不影响其使用，让一个工程作为其它工程的模板<br>
+该脚本需要放置到与待修改的ioc工程文件相同的文件夹下<br>
+脚本代码为tool.py，使用pythoninstaller生成的exe可执行文件在dist文件夹中，可直接复制使用
