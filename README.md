@@ -1,0 +1,2 @@
+# CubeMX Rename Project Tool
+该脚本可以实现对CubeMX生成的CMake工程进行改名而不影响其使用，让一个工程作为其它工程的模板
