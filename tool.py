@@ -3,6 +3,7 @@ import os
 from datetime import datetime
 import re
 from pathlib import Path
+import sys
 
 def FileModification(src,OriContent,NewContent):
     f = open(src, "r", encoding="utf-8")
@@ -108,8 +109,12 @@ def main():
         return
 
     try:
-        current_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)),"build")
-        is_dir_exists = Path.exists(current_dir) and Path(current_dir).is_dir()
+        if getattr(sys, 'frozen', False):
+            current_dir = os.path.dirname(sys.executable)
+        else:
+            current_dir = os.path.dirname(os.path.abspath(__file__))
+        build_dir = os.path.join(current_dir,"build")
+        is_dir_exists = Path.exists(build_dir) and Path(build_dir).is_dir()
         if is_dir_exists:
             print("是否删除存在的文件夹{}？\ny:确认   n:取消".format(current_dir))
     except Exception as e:
