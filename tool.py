@@ -50,6 +50,7 @@ def GetObjInfo(ObjPath):
     return objInfo
 
 def main():
+    
     try:
         file_list = GetOriFile()
         print("输入\"\\q\"退出程序")
@@ -116,7 +117,7 @@ def main():
         build_dir = os.path.join(current_dir,"build")
         is_dir_exists = Path.exists(build_dir) and Path(build_dir).is_dir()
         if is_dir_exists:
-            print("是否删除存在的文件夹{}？\ny:确认   n:取消".format(current_dir))
+            print("是否删除存在的文件夹{}？\ny:确认   n:取消".format(build_dir))
     except Exception as e:
         print("发生错误：{}".format(e))
         return
@@ -129,8 +130,8 @@ def main():
             elif user_input == "n": 
                 return
             else: 
-                shutil.rmtree(current_dir)
-                print("已成功删除文件夹{}".format(current_dir))
+                shutil.rmtree(build_dir)
+                print("已成功删除文件夹{}".format(build_dir))
                 break
         except ValueError:
             print("无效输入，请重试！")
